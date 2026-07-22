@@ -1,0 +1,1713 @@
+You are the principal software architect, mining-software engineer, full-stack developer, geostatistician and Windows desktop application developer for this project.
+
+Develop a genuine, functional Windows desktop mining application named:
+
+SMIN — Shanvi Mine Intelligence
+
+The final application must be distributed as:
+
+SMIN-Setup.exe
+
+After installation, the main application must run as:
+
+SMIN.exe
+
+PRODUCT OBJECTIVE
+
+Create one easy-to-use mining application combining the principal workflow concepts commonly found across advanced geological modelling, resource estimation, mine design, pit optimization and scheduling applications.
+
+The application must cover:
+
+1. Geological database management
+2. GIS and survey management
+3. Drillhole visualization
+4. Section interpretation
+5. Explicit geological modelling
+6. Implicit geological modelling
+7. Geostatistics and variography
+8. Block modelling
+9. Mineral resource estimation
+10. Resource classification
+11. Open-pit mine design
+12. Pit optimization
+13. Underground mine design
+14. Stope optimization
+15. Production scheduling
+16. Grade blending
+17. Stockpile management
+18. Equipment and haulage planning
+19. Mine economics
+20. Plan-versus-actual reconciliation
+21. Technical reporting
+22. AI-assisted workflows
+
+Do not copy proprietary source code, icons, menus, interface layouts, protected algorithms or branding from Leapfrog, Surpac, Deswik, MineSched, Vulcan, Datamine or any other software.
+
+Create an original SMIN interface and independently implemented mining workflows based on accepted geological, geostatistical, mine-planning and scheduling principles.
+
+IMPORTANT DEVELOPMENT RULE
+
+Do not generate only a visual prototype.
+
+Do not create non-functional buttons, empty pages, dummy calculations, fake outputs or placeholder modules presented as completed functionality.
+
+Every visible tool must have:
+
+* Functional inputs
+* Input validation
+* Calculation or processing logic
+* Progress indication
+* Error handling
+* Saved outputs
+* Version history
+* Audit records
+* Automated tests
+
+Develop the application module by module.
+
+Complete and test each phase before proceeding to the next phase.
+
+TECHNOLOGY ARCHITECTURE
+
+Desktop shell:
+
+* Tauri 2
+* Rust
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+Desktop interface:
+
+* React
+* TypeScript
+* Tailwind CSS
+* AG Grid
+* Plotly or Apache ECharts
+* React Flow where appropriate
+* Zustand or Redux Toolkit
+* TanStack Query
+
+3D visualization:
+
+* Three.js
+* React Three Fiber
+* VTK.js
+* WebGL2
+* GPU instancing
+* Level-of-detail rendering
+* Spatial chunking
+* Octree indexing
+* Clipping planes
+* Selection and picking
+* Section slicing
+
+GIS:
+
+* MapLibre GL
+* GDAL
+* GeoPandas
+* Rasterio
+* Shapely
+* PyProj
+* PostGIS-compatible geometry structures
+
+Scientific calculation engine:
+
+* Python 3
+* FastAPI local service or controlled Python sidecar
+* NumPy
+* SciPy
+* Pandas
+* Polars
+* PyArrow
+* DuckDB
+* GeoPandas
+* PyProj
+* GDAL
+* Rasterio
+* Shapely
+* VTK
+* PyVista
+* Trimesh
+* GSTools
+* PyKrige
+* scikit-learn
+* NetworkX
+* OR-Tools
+* HiGHS
+* PuLP or CVXPY
+
+High-performance processing:
+
+* Rust for application integration, file access, task management and selected geometry operations
+* Rayon for safe parallel Rust processing
+* C++ modules only where specialist geometry or optimization performance is required
+* WebAssembly for selected viewer-side calculations
+* GPU acceleration where technically suitable
+
+Local data storage:
+
+* SQLite for users, projects, configuration, metadata and audit records
+* DuckDB for large analytical queries
+* Apache Parquet for block models, composites and large tabular datasets
+* Apache Arrow for efficient data interchange
+* Local project folders for source files, meshes, surfaces, rasters, reports and backups
+
+Optional cloud services:
+
+* PostgreSQL
+* PostGIS
+* S3-compatible object storage
+* Redis
+* Background job queue
+* Secure API
+* Cloud backup and synchronization
+* AI Copilot
+* Multi-user collaboration
+* Central licence management
+
+PYTHON PACKAGING
+
+Package the Python scientific calculation engine with the application.
+
+The end user must not need to install:
+
+* Python
+* Node.js
+* Rust
+* Development tools
+* Database software
+* Scientific libraries
+
+Use PyInstaller, Nuitka or another appropriate packaging method to create a distributable scientific engine.
+
+The installed product may internally contain:
+
+* SMIN.exe
+* SMIN-Engine.exe
+* SMIN-Updater.exe
+* Scientific runtime
+* Required libraries
+* Reporting templates
+* Local databases
+* Viewer assets
+
+The user must only need to launch SMIN.exe.
+
+WINDOWS BUILD REQUIREMENT
+
+Configure a Windows build pipeline using a Windows build runner.
+
+The build pipeline must:
+
+1. Install Node.js.
+2. Install Rust stable.
+3. Install Tauri prerequisites.
+4. Install Python.
+5. Install scientific Python dependencies.
+6. Build and package the Python engine.
+7. Copy the packaged engine into the Tauri application resources.
+8. Build the React frontend.
+9. Compile the Tauri desktop application.
+10. Generate an NSIS Windows installer.
+11. Output SMIN-Setup.exe.
+12. Preserve build logs.
+13. Upload the installer as a downloadable build artifact.
+
+Create a GitHub Actions workflow using:
+
+windows-latest
+
+The project must be buildable through:
+
+npm run tauri build
+
+The release output must include a Windows setup executable.
+
+Design the project so code signing can be added later without changing the application architecture.
+
+OPERATING MODES
+
+The application must support:
+
+1. Offline Desktop Mode
+2. Cloud-Connected Mode
+3. Hybrid Mode
+
+OFFLINE DESKTOP MODE
+
+Users must be able to:
+
+* Create projects
+* Open existing projects
+* Import data
+* Validate drillholes
+* Display GIS information
+* Create geological interpretations
+* Generate models
+* Perform calculations
+* Save versions
+* Generate reports
+* Export outputs
+
+Internet must not be required for ordinary local project work.
+
+CLOUD-CONNECTED MODE
+
+Provide optional services for:
+
+* User authentication
+* Licence activation
+* Cloud backup
+* Project synchronization
+* Team collaboration
+* Centralized processing
+* AI Copilot
+* Organization administration
+
+HYBRID MODE
+
+The application must:
+
+* Continue functioning without internet
+* Store unsynchronized changes locally
+* Detect restored connectivity
+* Show synchronization status
+* Allow the user to select which projects are synchronized
+* Resolve synchronization conflicts safely
+* Never silently overwrite project files
+
+APPLICATION LAYOUT
+
+Create a professional mining-software desktop layout.
+
+Top application bar:
+
+* SMIN logo
+* Project name
+* Commodity
+* Coordinate system
+* Active scenario
+* Project version
+* Save status
+* Processing status
+* Notifications
+* AI Copilot
+* User profile
+
+Main navigation:
+
+1. Home
+2. Project Setup
+3. Data
+4. GIS and Survey
+5. Geology
+6. Resource Estimation
+7. Block Model
+8. Mine Design
+9. Pit Optimization
+10. Underground
+11. Scheduling
+12. Equipment and Haulage
+13. Economics
+14. Operations
+15. Reporting
+16. Administration
+
+Left Project Explorer:
+
+* Project
+* Coordinate systems
+* Boundaries
+* GIS layers
+* Topography
+* Drillholes
+* Samples
+* Surveys
+* Geological units
+* Structural data
+* Sections
+* Interpretations
+* Surfaces
+* Solids
+* Domains
+* Composites
+* Variograms
+* Block models
+* Resource estimates
+* Pit shells
+* Pit designs
+* Underground designs
+* Roads
+* Ramps
+* Dumps
+* Stockpiles
+* Schedules
+* Equipment
+* Economic scenarios
+* Reports
+
+Centre workspace:
+
+* Full-size 3D viewer
+* GIS map
+* Section viewer
+* Data table
+* Gantt chart
+* Dashboard
+* Report preview
+
+Right properties panel:
+
+* Object properties
+* Display settings
+* Calculation parameters
+* Validation status
+* Dependencies
+* Version history
+* Approval status
+
+Bottom dockable panel:
+
+* Processing jobs
+* Data table
+* Validation errors
+* Warnings
+* Logs
+* Selection details
+* Tasks
+* Object statistics
+
+USER-INTERFACE REQUIREMENTS
+
+Provide:
+
+* Dockable panels
+* Resizable panels
+* Detachable viewer window
+* Full-screen 3D mode
+* Multi-monitor support
+* Dark mode
+* Light mode
+* Keyboard shortcuts
+* Undo and redo
+* Context menus
+* Searchable commands
+* Saved workspace layouts
+* Recent projects
+* Automatic project recovery
+* Autosave
+* Manual save
+* Project backup
+* Crash-recovery system
+
+Do not duplicate the same menu or tool in multiple permanent locations.
+
+Use one primary location for every function.
+
+Provide two working modes:
+
+SIMPLE MODE
+
+* Guided workflows
+* Recommended defaults
+* Step-by-step screens
+* Automated validation
+* Short explanations
+* Limited technical parameters
+* One-click standard outputs
+
+PROFESSIONAL MODE
+
+* Complete parameter access
+* Advanced scientific options
+* Detailed calculation control
+* Manual overrides
+* Custom validation rules
+* Advanced visualization
+* Complete audit trail
+
+PROJECT SETUP MODULE
+
+Create a project setup wizard containing:
+
+* Project name
+* Client
+* Country
+* State or province
+* District
+* Project location
+* Commodity
+* Deposit type
+* Mining method
+* Reporting standard
+* Currency
+* Units
+* Coordinate reference system
+* EPSG code
+* UTM zone
+* Hemisphere
+* Vertical datum
+* Reference latitude
+* Reference longitude
+* Project boundary
+* Default density
+* Default block size
+* Default grade units
+* Project folder
+
+CRS VALIDATION IS CRITICAL
+
+The application must never classify drillholes as outside a boundary until:
+
+* Drillhole CRS is known
+* Boundary CRS is known
+* Both datasets are transformed into the approved project CRS
+* Axis order is validated
+* Units are validated
+* Hemisphere is validated
+* UTM zone is validated
+* Geometry validity is checked
+
+Store both original and transformed coordinates.
+
+Show:
+
+* Original CRS
+* Approved project CRS
+* Transformation method
+* Transformation status
+* Distance to boundary
+* Inside
+* On boundary
+* Near boundary
+* Outside
+* CRS unknown
+* Transformation failed
+
+DATA IMPORT MODULE
+
+Support:
+
+* CSV
+* XLSX
+* TXT
+* LAS
+* DXF
+* SHP
+* GeoJSON
+* KML
+* KMZ
+* GPX
+* GeoTIFF
+* DEM
+* ASCII grid
+* OBJ
+* STL
+* PLY
+* glTF
+* VTK
+* Parquet
+
+Only support proprietary mining formats where a legal, licensed and documented exchange method is available.
+
+Do not reverse-engineer encrypted or proprietary file formats.
+
+DRILLHOLE DATABASE
+
+Create the following tables:
+
+Collar:
+
+* Hole ID
+* Easting
+* Northing
+* Elevation
+* Total depth
+* Hole type
+* Drilling method
+* Start date
+* End date
+* Status
+* Contractor
+* Purpose
+
+Survey:
+
+* Hole ID
+* Depth
+* Azimuth
+* Dip
+* Survey method
+* Magnetic correction
+* Survey confidence
+* Survey date
+
+Lithology:
+
+* Hole ID
+* From
+* To
+* Lithology
+* Weathering
+* Alteration
+* Mineralization
+* Structure
+* Texture
+* Colour
+* Recovery
+* RQD
+* Comments
+
+Assay:
+
+* Hole ID
+* From
+* To
+* Sample ID
+* Element
+* Result
+* Unit
+* Detection limit
+* Laboratory
+* Analytical method
+* Batch
+* QA/QC type
+
+Density:
+
+* Hole ID
+* From
+* To
+* Density
+* Method
+* Moisture basis
+
+Geotechnical:
+
+* Hole ID
+* From
+* To
+* Recovery
+* RQD
+* Fracture frequency
+* Joint set
+* UCS
+* RMR
+* Q-system
+* Rock-mass domain
+
+DATA VALIDATION
+
+Check:
+
+* Duplicate hole IDs
+* Missing coordinates
+* Invalid coordinates
+* Invalid elevations
+* Unknown coordinate system
+* Surveys beyond total depth
+* Intervals beyond total depth
+* From depth greater than to depth
+* Gaps
+* Overlaps
+* Negative thickness
+* Duplicate samples
+* Missing grades
+* Missing units
+* Invalid lithology codes
+* Collars outside boundary
+* Collars above or below topography
+* Unreasonable doglegs
+* Missing downhole surveys
+* QA/QC failures
+* Density gaps
+
+Classify validation findings as:
+
+* Critical error
+* Warning
+* Information
+* Accepted exception
+
+Prevent scientific calculation when unresolved critical errors exist.
+
+GIS AND SURVEY MODULE
+
+Provide:
+
+* Project boundaries
+* Concession boundaries
+* Geological maps
+* Roads
+* Rivers
+* Settlements
+* Infrastructure
+* Restricted zones
+* Environmental zones
+* Satellite imagery
+* Terrain maps
+* Topographic maps
+* Geophysical layers
+* Geochemical layers
+* User-defined layers
+
+GIS functions:
+
+* Layer control
+* Projection
+* Coordinate transformation
+* Feature selection
+* Attribute tables
+* Buffer creation
+* Intersection
+* Union
+* Clipping
+* Distance
+* Area
+* Length
+* Contours
+* Surface generation
+* Cut-and-fill volume
+* Stockpile volume
+* Design-versus-survey comparison
+
+3D VIEWER
+
+Provide:
+
+* Perspective view
+* Orthographic view
+* Plan view
+* Front view
+* Back view
+* Left view
+* Right view
+* Top view
+* Bottom view
+* Orbit
+* Pan
+* Zoom
+* Zoom to selection
+* Object isolation
+* Transparency
+* Clipping planes
+* Section box
+* Exploded view
+* Coordinate readout
+* Object selection
+* Object snapping
+* Measurement
+* North arrow
+* Compass
+* Scale bar
+* Dynamic legend
+* Grid
+* Labels
+* Screenshots
+* Saved views
+* Video or animation export
+
+The viewer must remain large and presentation-ready.
+
+Do not confine the model to a small display panel.
+
+DRILLHOLE VISUALIZATION
+
+Provide:
+
+* Collar symbols
+* Hole traces
+* Hole labels
+* Search
+* Filtering
+* Multi-selection
+* Colour by lithology
+* Colour by assay
+* Colour by alteration
+* Colour by mineralization
+* Colour by weathering
+* Interval labels
+* Downhole graphs
+* Strip logs
+* Core recovery
+* RQD display
+* Variable trace thickness
+* Cylindrical and line display
+* True-thickness tools
+* Drillhole fence views
+
+SECTION INTERPRETATION
+
+Provide:
+
+* Section line creation
+* Regular section series
+* Section azimuth
+* Section dip
+* Section width
+* Section spacing
+* Drillhole projection
+* Contact digitization
+* Fault digitization
+* Ore-zone outlines
+* Snapping to drillholes
+* Copy to adjacent section
+* Unit correlation
+* 2D and 3D editing
+* Solid creation from interpreted strings
+
+EXPLICIT GEOLOGICAL MODELLING
+
+Provide:
+
+* Points
+* Polylines
+* Plan strings
+* Section strings
+* Tie lines
+* Triangulation
+* Surface creation
+* Solid creation
+* Boolean union
+* Boolean intersection
+* Boolean subtraction
+* Solid splitting
+* Hole filling
+* Mesh repair
+* Duplicate-triangle removal
+* Self-intersection detection
+* Closed-volume validation
+* Volume calculation
+* Surface-area calculation
+
+IMPLICIT GEOLOGICAL MODELLING
+
+Develop an independently implemented modelling engine supporting:
+
+* Lithological contacts
+* Stratigraphic sequences
+* Veins
+* Intrusions
+* Erosion surfaces
+* Faulted models
+* Structural trends
+* Grade shells
+* Indicator models
+* Signed-distance fields
+* Radial basis functions
+* Anisotropic trends
+* Boundary constraints
+* Pinch-out control
+* Minimum-thickness control
+* Geological priority relationships
+
+Inputs may include:
+
+* Drillhole intervals
+* Contact points
+* Structural measurements
+* Geological polylines
+* Existing meshes
+* Fault surfaces
+* Mapped contacts
+* Geological trends
+
+DYNAMIC DEPENDENCY SYSTEM
+
+Create the following dependency sequence:
+
+Drillholes
+→ Geological interpretations
+→ Domains
+→ Composites
+→ Variograms
+→ Grade estimates
+→ Block model
+→ Resource classification
+→ Economic block model
+→ Pit shells
+→ Pit design
+→ Schedule
+→ Reports
+
+Show each object as:
+
+* Up to date
+* Update available
+* Update required
+* Processing
+* Failed
+* Manually overridden
+
+Do not automatically replace an approved model.
+
+Show affected outputs and request user approval before publishing an updated version.
+
+RESOURCE ESTIMATION MODULE
+
+Statistics:
+
+* Count
+* Minimum
+* Maximum
+* Mean
+* Median
+* Variance
+* Standard deviation
+* Coefficient of variation
+* Percentiles
+* Histograms
+* Log histograms
+* Cumulative distribution
+* Probability plots
+* Box plots
+* Scatter plots
+* Correlation matrices
+* Contact analysis
+* Declustering
+* Swath plots
+* Grade-tonnage curves
+
+Compositing:
+
+* Fixed length
+* Bench composites
+* Domain composites
+* Residual redistribution
+* Minimum length
+* Maximum length
+* Gap handling
+* Missing-grade handling
+* Length weighting
+* Density weighting
+* Top cuts
+* Boundary control
+
+Variography:
+
+* Downhole variograms
+* Directional variograms
+* Experimental variograms
+* Variogram maps
+* Lag distance
+* Lag tolerance
+* Angular tolerance
+* Bandwidth
+* Nugget
+* Spherical model
+* Exponential model
+* Gaussian model
+* Nested structures
+* Anisotropy
+* Variogram fitting
+* Validation statistics
+
+BLOCK MODEL
+
+Support:
+
+* Regular parent blocks
+* Sub-blocking
+* Rotated block models
+* Minimum sub-block size
+* Multiple attributes
+* Geological coding
+* Topographic coding
+* Proportional assignment
+* Partial-volume calculation
+* Density
+* Rock type
+* Weathering
+* Oxidation
+* Grade fields
+* Resource category
+* Economic fields
+* Mining fields
+* Scheduling fields
+
+Use chunked Parquet or another efficient binary storage method.
+
+Do not load an entire large block model into frontend memory.
+
+GRADE ESTIMATION
+
+Provide progressively:
+
+* Nearest neighbour
+* Inverse distance
+* Inverse distance squared
+* Inverse distance cubed
+* Ordinary kriging
+* Simple kriging
+* Indicator kriging
+* Multiple indicator kriging
+* Universal kriging
+* Co-kriging
+* Conditional simulation
+
+SEARCH NEIGHBOURHOOD
+
+Support:
+
+* Ellipsoid dimensions
+* Ellipsoid rotation
+* Minimum samples
+* Maximum samples
+* Maximum samples per drillhole
+* Octants
+* Sectors
+* Minimum sectors
+* Multiple estimation passes
+* Domain boundaries
+* Hard boundaries
+* Soft boundaries
+* Dynamic anisotropy
+
+ESTIMATION VALIDATION
+
+Provide:
+
+* Composite-versus-block mean
+* Domain mean comparison
+* Nearest-neighbour comparison
+* Swath plots
+* Distribution comparison
+* Scatter plots
+* Slope of regression
+* Kriging efficiency
+* Kriging variance
+* Negative-weight checks
+* Section validation
+* Volume validation
+* Grade-tonnage comparison
+
+RESOURCE CLASSIFICATION
+
+Allow classification using:
+
+* Drillhole spacing
+* Search pass
+* Number of samples
+* Number of drillholes
+* Kriging variance
+* Slope of regression
+* Geological continuity
+* Confidence envelopes
+* User-defined polygons
+* Authorized manual overrides
+
+Categories:
+
+* Measured
+* Indicated
+* Inferred
+* Exploration Target
+* Unclassified
+
+OPEN-PIT CAD AND DESIGN
+
+Provide:
+
+* Points
+* Lines
+* Polylines
+* Polygons
+* Arcs
+* Splines
+* Layers
+* Object snapping
+* Grid snapping
+* Offset
+* Trim
+* Extend
+* Join
+* Break
+* Move
+* Copy
+* Rotate
+* Scale
+* Mirror
+* Drape to surface
+* Bench creation
+* Crest and toe
+* Bench height
+* Batter angle
+* Berm width
+* Geotechnical slope sectors
+* Ramp insertion
+* Switchbacks
+* Spiral ramps
+* Ramp gradient
+* Ramp width
+* Turning radius
+* Haul roads
+* Pit floors
+* Minimum mining width
+* Pushbacks
+* Dumps
+* Stockpiles
+* Drainage
+* Exclusion zones
+
+PIT OPTIMIZATION
+
+Calculate economic block value using:
+
+* Tonnes
+* Grade
+* Recovery
+* Payability
+* Commodity price
+* Mining cost
+* Processing cost
+* Treatment cost
+* Refining cost
+* Transport cost
+* Selling cost
+* Royalty
+* Penalty elements
+* By-product credits
+* Dilution
+* Ore loss
+
+Develop independent optimization methods including:
+
+* Graph-based maximum closure
+* Pseudoflow optimization
+* Floating-cone screening
+* Revenue-factor shells
+* Capacity-constrained scenarios
+
+Generate:
+
+* Nested pit shells
+* Revenue-factor shells
+* Ultimate pit
+* Ore tonnes
+* Waste tonnes
+* Strip ratio
+* Grade
+* Metal
+* Revenue
+* Operating cost
+* Cash flow
+* NPV
+* Maximum depth
+* Pit footprint
+* Sensitivity analysis
+
+UNDERGROUND MODULE
+
+Provide:
+
+* Declines
+* Shafts
+* Access drives
+* Crosscuts
+* Levels
+* Sublevels
+* Raises
+* Ore passes
+* Ventilation raises
+* Stopes
+* Development headings
+* Gradient control
+* Turning radius
+* Profile templates
+* Clearance envelopes
+* Ground-support zones
+
+STOPE OPTIMIZATION
+
+Support:
+
+* Minimum stope width
+* Maximum stope width
+* Minimum stope height
+* Maximum stope height
+* Dilution
+* Recovery
+* Cut-off grade
+* Stope orientation
+* Sublevel spacing
+* Crown pillars
+* Sill pillars
+* Geotechnical exclusions
+* Economic ranking
+
+PRODUCTION SCHEDULING
+
+Support:
+
+* Life-of-mine schedules
+* Long-term schedules
+* Annual schedules
+* Quarterly schedules
+* Monthly schedules
+* Weekly schedules
+* Daily schedules
+* Shift schedules
+
+Scheduling activities:
+
+* Clearing
+* Topsoil removal
+* Drilling
+* Blasting
+* Waste mining
+* Ore mining
+* Loading
+* Hauling
+* Crushing
+* Processing
+* Stockpiling
+* Rehandling
+* Rehabilitation
+* Underground development
+* Production drilling
+* Stope production
+* Backfilling
+
+Dependencies:
+
+* Finish-to-start
+* Start-to-start
+* Finish-to-finish
+* Minimum lag
+* Maximum lag
+* Bench precedence
+* Pushback precedence
+* Spatial dependencies
+* Access dependencies
+* Ventilation dependencies
+* Equipment dependencies
+
+Constraints:
+
+* Mining capacity
+* Processing capacity
+* Crushing capacity
+* Equipment availability
+* Utilization
+* Shift hours
+* Maintenance
+* Grade limits
+* Blend requirements
+* Stockpile capacity
+* Waste-dump capacity
+* Development metres
+* Workforce
+* Contractor capacity
+
+Provide:
+
+* Interactive Gantt chart
+* Dependency lines
+* Critical path
+* Resource loading
+* Drag-and-drop scheduling
+* Baseline comparison
+* Planned-versus-actual
+* Spatial schedule animation
+* Scenario comparison
+
+BLENDING AND STOCKPILES
+
+Track:
+
+* Opening balance
+* Receipts
+* Reclaim
+* Closing balance
+* Grade
+* Moisture
+* Density
+* Contaminants
+* Age
+* Source
+* Destination
+* Rehandling cost
+
+Optimize:
+
+* Minimum grade
+* Maximum grade
+* Target grade
+* Multiple element constraints
+* Plant-feed requirements
+* Product tonnage
+* Penalty elements
+
+EQUIPMENT AND HAULAGE
+
+Equipment library:
+
+* Drill rigs
+* Excavators
+* Shovels
+* Loaders
+* Trucks
+* Dozers
+* Graders
+* Crushers
+* Conveyors
+* Underground loaders
+* Underground trucks
+* Development jumbos
+* Production drills
+
+Equipment inputs:
+
+* Payload
+* Bucket size
+* Cycle time
+* Loaded speed
+* Empty speed
+* Availability
+* Utilization
+* Fuel consumption
+* Maintenance
+* Ownership cost
+* Operating cost
+
+Calculate:
+
+* Route length
+* Gradient
+* Rolling resistance
+* Travel time
+* Loading time
+* Dumping time
+* Queue time
+* Cycle time
+* Tonnes per hour
+* Required trucks
+* Fuel use
+* Haulage cost
+* Truck-shovel matching
+
+ECONOMICS
+
+Inputs:
+
+* Commodity price
+* Exchange rate
+* Inflation
+* Capital cost
+* Sustaining capital
+* Mining cost
+* Processing cost
+* General and administrative cost
+* Transport
+* Royalty
+* Tax
+* Working capital
+* Closure cost
+* Rehabilitation cost
+
+Outputs:
+
+* Revenue
+* Operating margin
+* EBITDA
+* Cash flow
+* Free cash flow
+* NPV
+* IRR
+* Payback
+* Break-even price
+* Break-even cut-off
+* Unit cost
+* Sensitivity analysis
+
+OPERATIONS AND RECONCILIATION
+
+Provide:
+
+* Plan versus actual
+* Survey versus design
+* Resource model versus grade-control model
+* Grade-control model versus mined
+* Mined versus plant
+* Plant versus product
+* Mine-call factor
+* Tonnage factor
+* Grade factor
+
+REPORTING
+
+Generate:
+
+* Drillhole validation report
+* Assay QA/QC report
+* Geological modelling report
+* Resource-estimation report
+* Resource statement
+* Pit-optimization report
+* Mine-design report
+* Schedule report
+* Equipment report
+* Economic report
+* Reconciliation report
+* Monthly progress report
+* Management dashboard
+* Competent Person support report
+
+Export:
+
+* PDF
+* DOCX
+* XLSX
+* CSV
+* PNG
+* SVG
+* DXF
+* GeoJSON
+* KML
+* OBJ
+* glTF
+* VTK
+
+Provide configurable report structures aligned with:
+
+* JORC
+* NI 43-101
+* SAMREC
+* PERC
+* CRIRSCO
+* UNFC
+
+Do not state that software-generated reports are automatically compliant.
+
+Show that review and approval by an appropriately qualified professional is required.
+
+AI COPILOT
+
+The AI Copilot must:
+
+* Explain tools
+* Recommend next steps
+* Identify missing information
+* Explain validation failures
+* Suggest parameter ranges
+* Compare scenarios
+* Draft technical narratives
+* Search project information
+* Explain calculation outputs
+* Identify scheduling bottlenecks
+* Generate management summaries
+
+AI must never silently alter technical parameters.
+
+For each proposed AI action:
+
+1. Show the proposed action.
+2. Show all parameters.
+3. Explain the reason.
+4. Allow editing.
+5. Request confirmation.
+6. Save an audit entry.
+
+PROCESSING ENGINE
+
+Run heavy operations as managed jobs:
+
+* File import
+* Drillhole desurvey
+* Surface creation
+* Solid creation
+* Implicit modelling
+* Compositing
+* Variography
+* Block-model creation
+* Grade estimation
+* Resource classification
+* Pit optimization
+* Stope optimization
+* Scheduling
+* Report generation
+
+Show:
+
+* Job name
+* Start time
+* Current stage
+* Percentage complete
+* Warnings
+* Error log
+* Cancel
+* Retry
+* Output location
+
+VERSIONING AND AUDIT
+
+Every calculation must store:
+
+* User
+* Date
+* Input versions
+* Parameters
+* Algorithm version
+* Software version
+* Runtime
+* Warnings
+* Errors
+* Output version
+* Approval status
+
+Object statuses:
+
+* Draft
+* Processing
+* Ready
+* Warning
+* Failed
+* Under review
+* Approved
+* Superseded
+* Archived
+
+SECURITY
+
+Implement:
+
+* User authentication
+* Role-based permissions
+* Project permissions
+* Encrypted credentials
+* Secure local storage
+* Audit logs
+* Automatic backups
+* Session control
+* Licence activation
+* Organization management
+
+Roles:
+
+* Super Admin
+* Organization Admin
+* Project Manager
+* Geologist
+* Resource Geologist
+* Mining Engineer
+* Surveyor
+* Scheduler
+* Economist
+* Reviewer
+* Client Viewer
+* Read-only User
+
+PERFORMANCE REQUIREMENTS
+
+Use:
+
+* Spatial chunking
+* Level of detail
+* Octrees
+* Bounding-volume hierarchies
+* Instanced GPU rendering
+* Binary transfer
+* Parquet
+* Arrow
+* Server-side or engine-side filtering
+* Multithreading
+* Background jobs
+* Progressive loading
+
+Do not load an entire large project into memory.
+
+Load only visible and required data.
+
+QUALITY GATES
+
+Gate 1 — Spatial Setup:
+
+* Approved CRS
+* Valid boundary
+* Valid vertical datum
+* Collar alignment passed
+
+Gate 2 — Drillhole Database:
+
+* No unresolved critical errors
+* Surveys valid
+* Assays valid
+* Geological intervals valid
+* QA/QC reviewed
+
+Gate 3 — Geological Model:
+
+* Valid surfaces
+* Closed solids
+* No critical self-intersections
+* Domain volumes verified
+* Interpretation reviewed
+
+Gate 4 — Resource Estimate:
+
+* Composites approved
+* Variograms approved
+* Estimation settings recorded
+* Block model validated
+* Classification approved
+
+Gate 5 — Mine Planning:
+
+* Economic assumptions approved
+* Slope settings approved
+* Pit shell selected
+* Mine design compliance passed
+* Schedule constraints approved
+
+Allow overrides only after recording:
+
+* Reason
+* User
+* Date
+* Approval authority
+
+DEVELOPMENT PHASES
+
+PHASE 1 — FUNCTIONAL DESKTOP FOUNDATION
+
+Develop first:
+
+* Tauri Windows desktop shell
+* React interface
+* Project creation
+* Project opening and saving
+* Local SQLite database
+* Project-folder structure
+* CRS configuration
+* CSV drillhole import
+* Collar, survey, geology and assay mapping
+* Drillhole validation
+* Basic GIS map
+* Full-screen 3D viewer
+* Drillhole traces
+* Project Explorer
+* Properties panel
+* Processing queue
+* Audit log
+* Windows build workflow
+* SMIN-Setup.exe generation
+
+Do not begin Phase 2 until Phase 1 is functional and tested.
+
+PHASE 2 — GEOLOGICAL MODELLING
+
+Develop:
+
+* Section creation
+* Drillhole projection
+* Section interpretation
+* Polylines
+* Surfaces
+* Solids
+* Mesh validation
+* Basic explicit model
+* Initial implicit-modelling service
+* Dynamic dependencies
+* Model versions
+
+PHASE 3 — RESOURCE ESTIMATION
+
+Develop:
+
+* Statistics
+* Compositing
+* Top-cut analysis
+* Variography
+* Regular block model
+* Sub-block framework
+* Nearest neighbour
+* Inverse distance
+* Ordinary kriging
+* Model validation
+* Resource classification
+* Resource tables
+
+PHASE 4 — OPEN-PIT PLANNING
+
+Develop:
+
+* Mining CAD
+* Economic block values
+* Pit optimization
+* Revenue-factor shells
+* Bench design
+* Ramp design
+* Pushbacks
+* Dumps
+* Stockpiles
+* Volumes
+* Design validation
+
+PHASE 5 — SCHEDULING
+
+Develop:
+
+* Activities
+* Dependencies
+* Gantt chart
+* Production constraints
+* Stockpile balances
+* Grade blending
+* Life-of-mine schedule
+* Spatial animation
+* Schedule reports
+
+PHASE 6 — UNDERGROUND
+
+Develop:
+
+* Declines
+* Drives
+* Shafts
+* Raises
+* Stopes
+* Stope optimization
+* Development schedules
+* Underground animation
+
+PHASE 7 — OPERATIONS, ECONOMICS AND AI
+
+Develop:
+
+* Equipment
+* Haulage
+* Plan versus actual
+* Reconciliation
+* Economics
+* Scenario comparison
+* AI Copilot
+* Automated reporting
+* Cloud synchronization
+
+FIRST DELIVERY REQUIREMENT
+
+Begin only with Phase 1.
+
+Create a functioning project repository and implement the Phase 1 desktop foundation.
+
+At the end of the first delivery, provide:
+
+1. Working project source code
+2. Complete folder structure
+3. Installation instructions for developers
+4. Automated tests
+5. Sample iron-ore drillhole dataset
+6. Demo project
+7. Windows build workflow
+8. Build logs
+9. Generated SMIN-Setup.exe artifact
+10. List of completed functions
+11. List of pending functions
+12. Known limitations
+
+Do not claim any function is complete unless it has been implemented and tested.
+
+Start now by creating the technical architecture, repository structure and fully functional Phase 1 implementation.

@@ -1,0 +1,6 @@
+hole_id,easting,northing,elevation,total_depth,hole_type,drilling_method,status,contractor
+DDH-001,512340.2,7812450.8,684.3,182.0,Diamond,Core,Validated,Northstar Drilling
+DDH-002,512515.7,7812388.4,679.8,224.5,Diamond,Core,Validated,Northstar Drilling
+DDH-003,512690.1,7812522.9,691.2,156.0,Reverse Circulation,RC,Review,Terra Bore
+DDH-004,512412.6,7812664.1,703.7,198.0,Diamond,Core,Validated,Northstar Drilling
+DDH-005,512822.9,7812710.5,712.4,245.0,Diamond,Core,Validated,Terra Bore

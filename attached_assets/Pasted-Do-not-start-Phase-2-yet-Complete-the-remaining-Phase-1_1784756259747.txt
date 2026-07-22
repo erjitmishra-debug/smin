@@ -1,0 +1,264 @@
+Do not start Phase 2 yet.
+
+Complete the remaining Phase 1 Windows desktop build and installer verification.
+
+CURRENT STATUS
+
+The frontend typecheck, validation tests and production web build have passed.
+
+The following items are still pending and must now be completed:
+
+1. Rust and Tauri compilation
+2. Native SQLite command compilation
+3. Native project create, open, save and close verification
+4. Python sidecar packaging foundation
+5. NSIS installer generation
+6. Actual SMIN-Setup.exe artifact generation
+7. Windows installation test
+8. Installed SMIN.exe launch test
+
+PRIMARY OBJECTIVE
+
+Run the Windows GitHub Actions workflow on:
+
+windows-latest
+
+Do not merely inspect or describe the workflow.
+
+Execute it and correct all errors until the Windows build passes successfully.
+
+WINDOWS BUILD REQUIREMENTS
+
+The workflow must:
+
+1. Check out the repository.
+2. Install Node.js.
+3. Install pnpm.
+4. Install Rust stable with the MSVC target.
+5. Install Python 3.12.
+6. Install frontend dependencies.
+7. Run TypeScript typecheck.
+8. Run automated validation tests.
+9. Build the React frontend.
+10. Run cargo check.
+11. Compile the Tauri application.
+12. Compile native SQLite commands.
+13. Build the NSIS installer.
+14. Rename or copy the final installer as:
+
+SMIN-Setup.exe
+
+15. Upload the installer as a GitHub Actions artifact.
+16. Upload all relevant build logs.
+
+EXPECTED INSTALLER OUTPUT
+
+The generated installer must be collected from the Tauri NSIS build location and published under the clear artifact name:
+
+SMIN-Windows-Installer
+
+The uploaded artifact must contain:
+
+SMIN-Setup.exe
+
+TAURI CONFIGURATION
+
+Verify that the Tauri configuration contains:
+
+* Product name: SMIN
+* Application title: SMIN — Shanvi Mine Intelligence
+* Main executable name: SMIN
+* Bundle target: nsis
+* Windows 10 and Windows 11 support
+* Application icon configuration
+* Unique bundle identifier
+* Local frontend assets
+* Required application resources
+* Native permissions limited to necessary functions
+
+NATIVE PROJECT COMMANDS
+
+Compile and test these Tauri commands:
+
+* create_project
+* open_project
+* save_project
+* close_project
+* create_project_folders
+* initialize_project_database
+* read_project_metadata
+* write_project_metadata
+* import_drillhole_csv
+* read_audit_log
+* write_audit_event
+
+Every command must return structured success or error responses.
+
+Do not allow the application to crash because of:
+
+* Invalid paths
+* Missing files
+* Permission denial
+* Invalid database
+* Locked files
+* Corrupt metadata
+* Duplicate project folders
+* Invalid project names
+
+PROJECT DATABASE
+
+Verify that each new project receives its own SQLite database.
+
+The project directory should follow this structure:
+
+ProjectName/
+├── project.smin
+├── project.db
+├── data/
+│   ├── collars/
+│   ├── surveys/
+│   ├── geology/
+│   ├── assays/
+│   └── density/
+├── imports/
+├── boundaries/
+├── gis/
+├── surfaces/
+├── models/
+├── reports/
+├── logs/
+├── backups/
+└── temp/
+
+The application must not store all project technical data only inside browser localStorage.
+
+Browser localStorage may remain only as a preview fallback.
+
+In the installed Windows application, native project storage and SQLite must be used.
+
+WINDOWS INSTALLATION TEST
+
+After generating SMIN-Setup.exe, perform a Windows smoke test through the workflow or an automated installation script.
+
+Verify:
+
+1. Installer starts.
+2. Installation completes.
+3. SMIN.exe is created.
+4. Start menu shortcut is created.
+5. Desktop shortcut is created if configured.
+6. SMIN.exe launches.
+7. The main interface loads.
+8. A project can be created.
+9. The project folder is created.
+10. project.db is initialized.
+11. A drillhole CSV can be imported.
+12. The demo project opens.
+13. The application can be closed normally.
+
+If a fully interactive installer test is not possible in GitHub Actions, perform a silent NSIS installation and launch smoke test.
+
+Use an installation command appropriate to the generated NSIS installer.
+
+DEMO PROJECT
+
+Bundle a demonstration project named:
+
+SMIN Iron Ore Demo
+
+Include:
+
+* Approved project CRS
+* EPSG code
+* Project boundary
+* At least 15 drillholes
+* Collar data
+* Survey data
+* Lithology intervals
+* Assay intervals
+* Density data
+* Validation results
+* Basic GIS view
+* Basic drillhole trace view
+
+Use a clearly fictional dataset.
+
+Do not use confidential or client-owned data.
+
+APPLICATION ICONS
+
+Add proper application icons in the formats required by Tauri and Windows.
+
+Include:
+
+* .ico
+* 32×32 PNG
+* 128×128 PNG
+* 256×256 PNG
+* 512×512 PNG where required
+
+Use the SMIN branding already present in the project.
+
+Do not use generic Tauri, Vite, React or Replit icons in the final installer.
+
+ERROR CORRECTION RULE
+
+If the Windows workflow fails:
+
+1. Read the exact build log.
+2. Identify the root cause.
+3. Correct the source or workflow.
+4. Rerun the workflow.
+5. Continue until all critical Windows build steps pass.
+
+Do not stop after only providing suggestions.
+
+Do not bypass failing compilation steps.
+
+Do not disable native functionality merely to make the build appear successful.
+
+Do not replace the Tauri desktop application with a website-only build.
+
+PHASE 1 COMPLETION GATE
+
+Phase 1 may be declared complete only after all of the following pass:
+
+* TypeScript typecheck
+* Automated validation tests
+* React production build
+* Cargo check
+* Tauri compilation
+* Native SQLite command compilation
+* NSIS packaging
+* SMIN-Setup.exe generation
+* Installer artifact upload
+* Installed application smoke test
+* Project creation smoke test
+* SQLite database initialization smoke test
+* Demo project open test
+
+FINAL RESPONSE FORMAT
+
+At completion, provide:
+
+1. Windows workflow run status
+2. Workflow run link
+3. Commit or checkpoint identifier
+4. Exact installer artifact name
+5. Exact installer filename
+6. Installer file size
+7. SHA-256 checksum
+8. Tests executed
+9. Tests passed
+10. Tests failed
+11. Actual installer output path
+12. Installation smoke-test result
+13. Application launch result
+14. Project creation test result
+15. SQLite initialization result
+16. Remaining known limitations
+17. Confirmation that Phase 2 has not started
+
+Do not claim that SMIN-Setup.exe exists unless the workflow has actually generated and uploaded it.
+
+Start by executing the Windows build workflow now.

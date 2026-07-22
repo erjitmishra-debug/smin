@@ -1,0 +1,1 @@
+- [SMIN delivery boundary](smin-delivery-boundary.md) — Phase 1 is intentionally limited to local project setup, drillhole intake, validation visibility, queue state, and audit history.

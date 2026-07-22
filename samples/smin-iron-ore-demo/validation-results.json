@@ -1,0 +1,8 @@
+{
+  "status": "fictional-demo",
+  "collars": 15,
+  "coordinate_status": "approved-project-crs",
+  "boundary_status": "inside",
+  "interval_status": "sample-results-present",
+  "later_phase_modules": "Not yet developed"
+}

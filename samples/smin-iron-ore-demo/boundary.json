@@ -1,0 +1,9 @@
+{
+  "crs": "EPSG:28350",
+  "boundary": [
+    {"easting": 512100, "northing": 7812200},
+    {"easting": 512950, "northing": 7812200},
+    {"easting": 512950, "northing": 7812850},
+    {"easting": 512100, "northing": 7812850}
+  ]
+}
