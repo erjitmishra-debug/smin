@@ -1,0 +1,7 @@
+{
+  "id": "demo-iron-ore-phase1",
+  "name": "SMIN Iron Ore Demo",
+  "commodity": "Iron Ore (Fe)",
+  "epsg": 28350,
+  "folder": "SMIN Iron Ore Demo"
+}
