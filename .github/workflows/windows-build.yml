@@ -1,0 +1,52 @@
+name: SMIN Windows build
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Validate packaging inputs
+        shell: pwsh
+        run: |
+          if (-not (Test-Path artifacts/smin/src-tauri/icons/icon.ico)) { throw "Missing Windows icon.ico" }
+          if (-not (Test-Path artifacts/smin/src-tauri/icons/32x32.png)) { throw "Missing 32x32 icon" }
+          if (-not (Test-Path artifacts/smin/sidecar/pyproject.toml)) { throw "Missing sidecar package" }
+          if (-not (Test-Path samples/smin-iron-ore-demo/project.smin)) { throw "Missing demo project" }
+          $collarRows = (Get-Content samples/smin-iron-ore-demo/data/collars/collars.csv | Select-Object -Skip 1 | Where-Object { $_.Trim() -ne "" }).Count
+          if ($collarRows -lt 15) { throw "Demo project must contain at least 15 collar rows; found $collarRows" }
+      - name: Typecheck
+        run: pnpm --filter @workspace/smin run typecheck
+      - name: Validation tests
+        run: pnpm --filter @workspace/smin run test
+      - name: Build frontend
+        run: pnpm --filter @workspace/smin run build
+      - name: Check Rust desktop shell
+        working-directory: artifacts/smin
+        run: cargo check --manifest-path src-tauri/Cargo.toml
+      - name: Build NSIS installer
+        run: pnpm --filter @workspace/smin run tauri:build
+        env:
+          CI: true
+      - name: Normalize installer name
+        shell: pwsh
