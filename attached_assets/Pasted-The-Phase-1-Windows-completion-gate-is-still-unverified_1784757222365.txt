@@ -1,0 +1,147 @@
+The Phase 1 Windows completion gate is still unverified because the GitHub Actions workflow has not run.
+
+Do not start Phase 2.
+
+Now complete the GitHub and Windows workflow execution process.
+
+REQUIRED ACTIONS
+
+1. Verify that this project is connected to a GitHub repository.
+2. If no GitHub repository is connected:
+
+   * Create or connect a GitHub repository for this SMIN project.
+   * Push the complete current project source to the default branch.
+3. Confirm that the following workflow file is committed:
+
+.github/workflows/windows-build.yml
+
+4. Ensure the workflow includes both automatic and manual triggers:
+
+on:
+push:
+branches:
+- main
+workflow_dispatch:
+
+5. Commit and push all current files, including:
+
+   * Tauri source files
+   * Rust source files
+   * SQLite schema and native commands
+   * React frontend
+   * Tests
+   * Demo project
+   * Sample data
+   * GitHub Actions workflow
+   * NSIS configuration
+   * Application icons
+
+6. Trigger the Windows GitHub Actions workflow.
+
+Do not only tell me how to trigger it.
+
+Use the available GitHub integration or Git commands to push the source and start the workflow.
+
+WINDOWS WORKFLOW MUST RUN
+
+The workflow must run on:
+
+windows-latest
+
+It must execute:
+
+* pnpm install
+* TypeScript typecheck
+* Automated tests
+* React production build
+* cargo check
+* Tauri compilation
+* Native SQLite compilation
+* NSIS installer build
+* Installer renaming
+* Artifact upload
+* Windows installation smoke test
+* SMIN.exe launch smoke test
+* Native project creation smoke test
+* SQLite database initialization smoke test
+* Demo project open test
+
+INSTALLER REQUIREMENT
+
+The final installer must be named:
+
+SMIN-Setup.exe
+
+The GitHub Actions artifact must be named:
+
+SMIN-Windows-Installer
+
+The artifact must contain the actual generated installer and not only source files or logs.
+
+WORKFLOW FAILURE HANDLING
+
+If the workflow fails:
+
+1. Read the failed step and complete build log.
+2. Identify the exact root cause.
+3. Correct the workflow, configuration or source code.
+4. Commit the fix.
+5. Push the correction.
+6. Rerun the workflow.
+7. Continue until the complete Windows build passes.
+
+Do not stop after the first failed Windows run.
+
+Do not disable tests or native functionality merely to obtain a green workflow.
+
+Do not replace Tauri with a browser-only version.
+
+MANUAL WORKFLOW TRIGGER
+
+Ensure workflow_dispatch is present so the workflow can also be started manually from GitHub Actions.
+
+FINAL VERIFICATION
+
+Do not declare Phase 1 complete unless all of these are verified:
+
+* Cargo check passed
+* Tauri compilation passed
+* Native SQLite compilation passed
+* NSIS packaging passed
+* SMIN-Setup.exe generated
+* Installer artifact uploaded
+* Windows silent installation passed
+* SMIN.exe launched successfully
+* Native project creation passed
+* Native SQLite initialization passed
+* Demo project opened successfully
+
+FINAL RESPONSE
+
+Return:
+
+1. GitHub repository name
+2. Repository branch
+3. Latest commit identifier
+4. Windows workflow name
+5. Workflow run URL
+6. Workflow run number
+7. Workflow conclusion
+8. Passed steps
+9. Failed steps
+10. Installer artifact name
+11. Installer filename
+12. Installer size
+13. SHA-256 checksum
+14. Installer output path
+15. Installation smoke-test result
+16. SMIN.exe launch result
+17. Project creation result
+18. SQLite initialization result
+19. Demo project result
+20. Remaining limitations
+21. Confirmation that Phase 2 has not started
+
+Do not respond only with instructions.
+
+Execute the repository push and Windows workflow now.
